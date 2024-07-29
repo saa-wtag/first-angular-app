@@ -1,2 +1,7 @@
 <h1>Navbar Component html file</h1>
 <p>navbar paragraph html file</p>
+<button (click)="wowButton()">WOW!!</button>
+<button (mouseover)="hoverButton()">Hover!!</button>
+<input type="text" (keyup)="keyEntry($event)">
+<input type="text" [(ngModel)]="username" >
+<h3>{{username}}</h3>
