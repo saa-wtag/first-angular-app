@@ -1,10 +1,11 @@
 import {Component} from "@angular/core";
 import {FormsModule} from "@angular/forms";
+import {NgClass, NgForOf, NgIf, NgStyle} from "@angular/common";
 
 @Component({
   selector: 'app-navbar',
   standalone: true,
-  imports:[FormsModule],
+  imports: [FormsModule, NgIf, NgForOf, NgStyle, NgClass],
   // template:`<h1>Navbar Component</h1>
   //           <p>navbar paragraph</p>`,
   // styles: `h1 {
@@ -16,6 +17,10 @@ import {FormsModule} from "@angular/forms";
 
 export class AppNavbar{
   username:string="Sayem Ahmed";
+  isFromNgTemplate:boolean=false;
+  users:Array<string>=['one','two','three','four','five','six','seven','eight'];
+  isActive:boolean=false;
+  isPresent:boolean=true;
 
   wowButton(){
     console.log("Wow Button");

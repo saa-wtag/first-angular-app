@@ -5,3 +5,45 @@
 <input type="text" (keyup)="keyEntry($event)">
 <input type="text" [(ngModel)]="username" >
 <h3>{{username}}</h3>
+
+<h2>=========OLD WAY========</h2>
+<h1>{{isFromNgTemplate}}</h1>
+<h2 *ngIf="isFromNgTemplate; else message">Not from ng-template</h2>
+
+<ng-template #message>
+  <h1>From ng-template</h1>
+</ng-template>
+
+<h2>----------|ngFor|----------</h2>
+
+<h3 *ngFor="let user of users">{{ user }}</h3>
+
+<h2>=========NEW WAY========</h2>
+
+@if (isFromNgTemplate){
+  <h2>Not from ng-template new way</h2>
+} @else {
+  <h2>From ng-template new way</h2>
+}
+<h2>----------|&#64;For|----------</h2>
+@for (user of users; track user){
+  <h3>{{ user }}</h3>
+} @empty {
+  <h2>The array is empty !!</h2>
+
+}
+
+<h2>===========|ngStyle|===========</h2>
+<h1 [ngStyle]="{
+'color': isActive?'green':'red',
+'textTransform': isActive?'uppercase':'lowercase'
+}">Ng Style Directive</h1>
+
+<h2>===========|ngStyle|===========</h2>
+
+<h2 [ngClass]="{
+'present':isPresent,
+'absent':!isPresent
+}">
+  Ng Class Directive
+</h2>

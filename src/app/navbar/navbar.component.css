@@ -1,3 +1,12 @@
 h1 {
   color: orange;
 }
+
+.present{
+  color: aquamarine;
+  text-transform: uppercase;
+}
+.absent{
+color: orange;
+  text-transform: lowercase;
+}
